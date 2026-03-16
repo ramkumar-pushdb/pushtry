@@ -7,22 +7,30 @@ import Header from './Header';
 import "./Home.css"
 import "./Header.css"
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import Men from './Products/Men';
+import Women from './Products/women';
 
 function App() {
   return (
-    <div className='img img-fluid'>
+<>
+
+    <Men/>
+    <Women/>
+</>
+
+    // <div className='img img-fluid'>
     
-    <Header/>
-    <div className='back'>
-    <Routes>
+    // <Header/>
+    // <div className='back'>
+    // <Routes>
 
-      <Route path='/' element={<Home/>}/>
-      <Route path='/Category' element={<Category/>}/>
+    //   <Route path='/' element={<Home/>}/>
+    //   <Route path='/Category' element={<Category/>}/>
       
-    </Routes>
+    // </Routes>
 
-    </div>
-    </div>
+    // </div>
+    // </div>
     
     
   );
