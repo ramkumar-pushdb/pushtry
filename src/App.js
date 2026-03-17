@@ -6,6 +6,7 @@ import Header from './Header';
 import Women from './Products/women';
 import Kids from './Products/Kids';
 import Genz from './Products/Genz';
+import Contact from './Contact';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <Route path='/women' element={<Women/>}/>
             <Route path='/kids' element={<Kids/>}/>
             <Route path='/genz' element={<Genz/>}/>
+            <Route path='/contact' element={<Contact/>}/>
           </Routes>
         </div>
       </div>

@@ -29,6 +29,7 @@ function Header() {
           <Link to="/women"     className={`header-link ${location.pathname === '/women'     ? 'active' : ''}`}>Women</Link>
           <Link to="/kids"       className={`header-link ${location.pathname === '/kids'       ? 'active' : ''}`}>Kids</Link>
           <Link to="/genz"      className={`header-link ${location.pathname === '/genz'      ? 'active' : ''}`}>Genz</Link>
+          <Link to="/contact"   className={`header-link ${location.pathname === '/contact'   ? 'active' : ''}`}>Contact</Link>
         </nav>
 
         {/* Search bar (desktop) */}
@@ -116,14 +117,14 @@ function Header() {
         <div className="mobile-drawer-overlay" onClick={() => setMenuOpen(false)}>
           <nav className="mobile-drawer" onClick={e => e.stopPropagation()}>
             <div className="drawer-logo">RRS <span>Cloths</span></div>
-            {['/', '/category', '/women', '/men', '/sale'].map((path, i) => (
+            {['/', '/category', '/women', '/men', '/sale', '/contact'].map((path, i) => (
               <Link
                 key={path}
                 to={path}
                 className={`drawer-link ${location.pathname === path ? 'active' : ''}`}
                 onClick={() => setMenuOpen(false)}
               >
-                {['Home', 'Category', 'Women', 'Men', 'Sale'][i]}
+                {['Home', 'Category', 'Women', 'Men', 'Sale', 'Contact'][i]}
               </Link>
             ))}
           </nav>
