@@ -59,7 +59,7 @@ function Kids() {
 
         
   
-  )
-}
+        )
+    }
 
-export default Kids
+    export default Kids

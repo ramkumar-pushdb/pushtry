@@ -1,64 +1,57 @@
 import React from 'react'
-import { useEffect,useState } from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
 
-
 function Men() {
-    const [products, setProducts] = useState([])
-    const [men, setmen] = useState([])
+  const [products, setProducts] = useState([])
 
-
-    const fetchData = async () => {
-        try {
-            const res = await axios.get("https://pushtry-backend.onrender.com/products")
-             
-            setProducts(res.data)
-
-        } catch (err) {
-            console.error(err)
-        }
-        finally {   
-            console.log(products)
-        }
+  const fetchData = async () => {
+    try {
+      const res = await axios.get("https://pushtry-backend.onrender.com/products")
+      setProducts(res.data)
+    } catch (err) {
+      console.error(err)
     }
+  }
 
-    
+  useEffect(() => {
+    fetchData()
+  }, [])
 
-    
+  const menProducts = products.filter(item => item.category === "men")
 
-    useEffect(() => {
-    
-        fetchData()
-        
-    }, [])
-    const menProducts = products.filter(item => item.category === "men")
-
-  
-    
   return (
-    <div>
-            {menProducts.length > 0 ? (
-                menProducts.map((item) => (
+    <div className="container my-4">
+      <div className="row">
+        {menProducts.length > 0 ? (
+          menProducts.map((item) => (
+            <div className="col-md-3 mb-4" key={item._id}>
+              <div className="card h-100 shadow-sm">
 
+                <img 
+                  src={item.image} 
+                  alt={item.name} 
+                  className="card-img-top"
+                  style={{ height: "250px", objectFit: "cover" }}
+                />
 
-                    <div className="card"  style={{ width: '20rem' }} key={item._id}>
-                        <div className="card-body">
-                            <img src={item.image} alt={item.name} className="card-img-top" />
-                            <h5 className="card-title">{item.name}</h5>
-                            <p className="card-text">{item.description}</p>
-                        </div>
-                        <ul className="list-group list-group-flush">
-                            <li className="list-group-item">${item.price.toFixed(2)}</li>
-                        </ul>
-                    </div>
-                ))
-            ) : (
-                <p>Loading products...</p>
-            )}
-        </div>
+                <div className="card-body">
+                  <h5 className="card-title">{item.name}</h5>
+                  <p className="card-text">{item.description}</p>
+                </div>
 
-        
-  
+                <div className="card-footer text-center">
+                  <strong>${item.price.toFixed(2)}</strong>
+                </div>
+
+              </div>
+            </div>
+          ))
+        ) : (
+          <p>Loading products...</p>
+        )}
+      </div>
+    </div>
   )
 }
 

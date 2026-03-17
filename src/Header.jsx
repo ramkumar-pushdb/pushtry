@@ -117,14 +117,14 @@ function Header() {
         <div className="mobile-drawer-overlay" onClick={() => setMenuOpen(false)}>
           <nav className="mobile-drawer" onClick={e => e.stopPropagation()}>
             <div className="drawer-logo">RRS <span>Cloths</span></div>
-            {['/', '/category', '/women', '/men', '/sale', '/contact'].map((path, i) => (
+            {['/', '/category', '/women', '/men', '/sale'].map((path, i) => (
               <Link
                 key={path}
                 to={path}
                 className={`drawer-link ${location.pathname === path ? 'active' : ''}`}
                 onClick={() => setMenuOpen(false)}
               >
-                {['Home', 'Category', 'Women', 'Men', 'Sale', 'Contact'][i]}
+                {['Home', 'Category', 'Women', 'Men', 'Sale'][i]}
               </Link>
             ))}
           </nav>

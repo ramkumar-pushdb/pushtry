@@ -2,11 +2,12 @@ import React from 'react'
 import discount1 from './images/discount 5.jpg'
 import discount2 from './images/discount2.jpg'
 import discount3 from './images/discount4.jpg'
+import { useNavigate } from 'react-router-dom'
 import "./Home.css";
 
 function Home() {
   const imgStyle = { height: "400px", objectFit: "cover" };
-
+  const navigate=useNavigate()
   return (
     <>
       {/* 🔹 Carousel */}
@@ -47,24 +48,32 @@ function Home() {
       <div className="container my-5 ">
         <h2 className="text-center mb-4">Shop by Category</h2>
         <div className="row text-center">
-          <div className="col-md-4">
+          <div className="col-md-3"onClick={()=>navigate("/men")}>
             <div className="card shadow-sm p-3">
               <h5>Men</h5>
               <p>Trendy and stylish outfits</p>
             </div>
           </div>
-          <div className="col-md-4">
+          <div className="col-md-3" onClick={()=>navigate("/women")}>
             <div className="card shadow-sm p-3">
               <h5>Women</h5>
               <p>Latest fashion collections</p>
             </div>
           </div>
-          <div className="col-md-4">
+          <div className="col-md-3" onClick={()=>navigate("/kids")}>
             <div className="card shadow-sm p-3">
               <h5>Kids</h5>
               <p>Cute & comfortable styles</p>
             </div>
+            
           </div>
+           <div className="col-md-3" onClick={()=>navigate("/Genz")}>
+            <div className="card shadow-sm p-3">
+              <h5>Genz</h5>
+              <p>Latest fashion collections</p>
+            </div>
+          </div>
+          
         </div>
       </div>
 
