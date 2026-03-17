@@ -1,18 +1,262 @@
-.header{
-    background-color: rgb(235, 70, 125);
-    display:flex;
-    align-items:center;
-    padding:20px;
+/* ── Reset & base ─────────────────────────────────────────── */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.35);
+  font-family: 'Segoe UI', sans-serif;
 }
 
-.logo{
-    font-size:28px;
-    font-weight:bold;
+/* ── Top announcement bar ─────────────────────────────────── */
+.header-topbar {
+  background: linear-gradient(90deg, #e91e8c, #ff5722);
+  color: #fff;
+  text-align: center;
+  padding: 6px 16px;
+  font-size: clamp(0.62rem, 1.6vw, 0.75rem);
+  letter-spacing: 0.03em;
 }
 
-.nav{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    margin-left:auto;
+/* ── Main row ─────────────────────────────────────────────── */
+.header-main {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 1.5vw, 20px);
+  padding: clamp(10px, 1.8vw, 16px) clamp(14px, 4vw, 48px);
+}
+
+/* ── Logo ─────────────────────────────────────────────────── */
+.header-logo {
+  font-family: Georgia, serif;
+  font-size: clamp(1.2rem, 3vw, 1.75rem);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  color: #fff;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.header-logo span {
+  background: linear-gradient(90deg, #f48fb1, #ff8a65);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ── Desktop nav ──────────────────────────────────────────── */
+.header-nav {
+  display: flex;
+  gap: clamp(10px, 2vw, 24px);
+  flex: 1;
+}
+.header-link {
+  color: rgba(255, 255, 255, 0.78);
+  text-decoration: none;
+  font-size: clamp(0.78rem, 1.4vw, 0.9rem);
+  font-weight: 500;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+.header-link:hover,
+.header-link.active {
+  color: #fff;
+  border-bottom-color: #f48fb1;
+}
+
+/* ── Search (desktop) ─────────────────────────────────────── */
+.header-search {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  padding: 6px 14px;
+  gap: 8px;
+  flex: 1;
+  max-width: 280px;
+  transition: background 0.2s;
+}
+.header-search:focus-within {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+.header-search input {
+  background: none;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: clamp(0.74rem, 1.4vw, 0.86rem);
+  width: 100%;
+}
+.header-search input::placeholder { color: rgba(255,255,255,0.45); }
+.header-search button {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.7);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  transition: color 0.2s;
+}
+.header-search button:hover { color: #fff; }
+
+/* ── Icon group ───────────────────────────────────────────── */
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.icon-btn {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 50%;
+  color: #fff;
+  width: clamp(32px, 4vw, 40px);
+  height: clamp(32px, 4vw, 40px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  position: relative;
+}
+.icon-btn:hover {
+  background: rgba(255,255,255,0.18);
+  transform: scale(1.08);
+}
+
+/* Cart badge */
+.cart-badge {
+  position: absolute;
+  top: -4px; right: -4px;
+  background: #e91e8c;
+  color: #fff;
+  border-radius: 50%;
+  width: 17px; height: 17px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #1a1a2e;
+}
+
+/* Hide mobile-only items on desktop */
+.mobile-search-btn,
+.hamburger { display: none; }
+
+/* ── Mobile search bar ────────────────────────────────────── */
+.mobile-search-bar {
+  display: flex;
+  gap: 8px;
+  padding: 10px 16px;
+  background: rgba(255,255,255,0.06);
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.mobile-search-bar input {
+  flex: 1;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: #fff;
+  font-size: 0.88rem;
+  outline: none;
+}
+.mobile-search-bar input::placeholder { color: rgba(255,255,255,0.4); }
+.mobile-search-bar button {
+  background: #e91e8c;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ── Mobile drawer ────────────────────────────────────────── */
+.mobile-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 2000;
+  backdrop-filter: blur(2px);
+}
+.mobile-drawer {
+  width: min(75vw, 280px);
+  height: 100%;
+  background: #1a1a2e;
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: 4px 0 32px rgba(0,0,0,0.5);
+  animation: slideIn 0.25s ease;
+}
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(0); }
+}
+.drawer-logo {
+  font-family: Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+.drawer-logo span {
+  background: linear-gradient(90deg, #f48fb1, #ff8a65);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.drawer-link {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 12px 14px;
+  border-radius: 10px;
+  transition: background 0.2s, color 0.2s;
+}
+.drawer-link:hover,
+.drawer-link.active {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+/* ── Responsive breakpoints ───────────────────────────────── */
+
+/* Tablet: hide desktop nav, show hamburger */
+@media (max-width: 768px) {
+  .header-nav    { display: none; }
+  .header-search { display: none; }
+  .mobile-search-btn,
+  .hamburger     { display: flex; }
+}
+
+/* Mobile: tighter padding */
+@media (max-width: 480px) {
+  .header-main {
+    padding: 10px 14px;
+    gap: 8px;
+  }
+  .header-topbar { display: none; }
+}
+
+/* ── App layout ───────────────────────────────────────────── */
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f5f6fa;
+}
+.page-content {
+  flex: 1;
 }

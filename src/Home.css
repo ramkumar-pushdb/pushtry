@@ -1,0 +1,195 @@
+/* ── Page wrapper ─────────────────────────────────────────── */
+.home {
+  padding: clamp(16px, 3vw, 40px) clamp(14px, 4vw, 60px);
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(32px, 5vw, 64px);
+}
+
+/* ── Carousel ─────────────────────────────────────────────── */
+.carousel-section { width: 100%; }
+
+.rounded-carousel { border-radius: 16px; overflow: hidden; }
+
+.carousel-img {
+  width: 100%;
+  height: clamp(180px, 38vw, 460px);
+  object-fit: cover;
+  display: block;
+}
+
+.slide-caption {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.72) 0%,
+    rgba(0,0,0,0.15) 55%,
+    transparent 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: clamp(14px, 3vw, 32px);
+}
+
+.slide-badge {
+  display: inline-block;
+  background: linear-gradient(90deg, #e91e8c, #ff5722);
+  color: #fff;
+  border-radius: 999px;
+  padding: 3px 12px;
+  font-size: clamp(0.6rem, 1.4vw, 0.72rem);
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  width: fit-content;
+}
+
+.slide-title {
+  color: #fff;
+  font-family: Georgia, serif;
+  font-size: clamp(1.1rem, 4vw, 2.2rem);
+  font-weight: 700;
+  margin: 0 0 4px;
+  line-height: 1.2;
+}
+
+.slide-sub {
+  color: rgba(255,255,255,0.75);
+  font-size: clamp(0.7rem, 1.8vw, 1rem);
+  margin: 0 0 14px;
+}
+
+.slide-cta {
+  background: #fff;
+  color: #1a1a2e;
+  border: none;
+  border-radius: 999px;
+  padding: clamp(6px, 1.2vw, 10px) clamp(16px, 3vw, 28px);
+  font-size: clamp(0.7rem, 1.5vw, 0.88rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  width: fit-content;
+  transition: background 0.2s, transform 0.15s;
+}
+.slide-cta:hover {
+  background: #f48fb1;
+  color: #fff;
+  transform: scale(1.04);
+}
+
+/* ── Categories ───────────────────────────────────────────── */
+.category-section { width: 100%; }
+
+.category-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: clamp(16px, 2.5vw, 28px);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.category-label {
+  font-size: clamp(0.7rem, 1.4vw, 0.8rem);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #e91e8c;
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+
+.category-title {
+  font-family: Georgia, serif;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0;
+}
+
+.view-all-btn {
+  font-size: clamp(0.75rem, 1.4vw, 0.86rem);
+  font-weight: 600;
+  color: #0f3460;
+  text-decoration: none;
+  border: 1.5px solid #0f3460;
+  border-radius: 999px;
+  padding: 6px 18px;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+.view-all-btn:hover {
+  background: #0f3460;
+  color: #fff;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(clamp(90px, 16vw, 140px), 1fr));
+  gap: clamp(10px, 2vw, 18px);
+}
+
+.cat-card {
+  border-radius: 16px;
+  padding: clamp(14px, 2.5vw, 22px) clamp(8px, 1.5vw, 14px);
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.cat-emoji { font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1; }
+
+.cat-label {
+  font-weight: 700;
+  font-size: clamp(0.75rem, 1.5vw, 0.92rem);
+  letter-spacing: 0.02em;
+}
+
+.cat-count {
+  font-size: clamp(0.58rem, 1.1vw, 0.7rem);
+  color: #888;
+}
+
+/* ── Banner strip ─────────────────────────────────────────── */
+.banner-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(12px, 2vw, 0px);
+  background: linear-gradient(135deg, #1a1a2e, #0f3460);
+  border-radius: 14px;
+  padding: clamp(16px, 2.5vw, 24px) clamp(16px, 3vw, 40px);
+}
+
+.banner-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-size: clamp(0.72rem, 1.5vw, 0.88rem);
+  font-weight: 500;
+  padding: 8px clamp(12px, 2vw, 24px);
+  flex: 1 1 140px;
+  justify-content: center;
+  border-right: 1px solid rgba(255,255,255,0.12);
+}
+.banner-item:last-child { border-right: none; }
+
+.banner-icon { font-size: clamp(1rem, 2vw, 1.3rem); }
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .home { padding: 14px; gap: 28px; }
+  .banner-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .banner-item:last-child { border-bottom: none; }
+}

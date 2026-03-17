@@ -1,37 +1,28 @@
-
-import React from 'react'
+import React from 'react';
 import './App.css';
 import Home from './Home';
-import Category from './Category';
-import Header from './Header';
-import "./Home.css"
-import "./Header.css"
-import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import Men from './Products/Men';
+import Header from './Header';
 import Women from './Products/women';
+// import Kids from './Products/Kids';
+// import Genz from './Products/Genz';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-<>
-
-    <Men/>
-    <Women/>
-</>
-
-    // <div className='img img-fluid'>
     
-    // <Header/>
-    // <div className='back'>
-    // <Routes>
-
-    //   <Route path='/' element={<Home/>}/>
-    //   <Route path='/Category' element={<Category/>}/>
-      
-    // </Routes>
-
-    // </div>
-    // </div>
-    
+      <div className="app-wrapper">
+        <Header />
+        <div className="page-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/men" element={<Men />} />
+            <Route path='/women' element={<Women/>}/>
+            {/* <Route path='/kids' element={<Kids/>}/>
+            <Route path='/genz' element={<Genz/>}/> */}
+          </Routes>
+        </div>
+      </div>
     
   );
 }
