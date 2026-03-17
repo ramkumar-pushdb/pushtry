@@ -1,5 +1,5 @@
 import React from 'react'
-import discount1 from './images/discount1.jpg'
+import discount1 from './images/discount 5.jpg'
 import discount2 from './images/discount2.jpg'
 import discount3 from './images/discount4.jpg'
 import "./Home.css";
@@ -44,7 +44,7 @@ function Home() {
       </div>
 
       {/* 🔹 Categories */}
-      <div className="container my-5">
+      <div className="container my-5 ">
         <h2 className="text-center mb-4">Shop by Category</h2>
         <div className="row text-center">
           <div className="col-md-4">
