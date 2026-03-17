@@ -4,8 +4,8 @@ import Home from './Home';
 import Men from './Products/Men';
 import Header from './Header';
 import Women from './Products/women';
-// import Kids from './Products/Kids';
-// import Genz from './Products/Genz';
+import Kids from './Products/Kids';
+import Genz from './Products/Genz';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -18,8 +18,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/men" element={<Men />} />
             <Route path='/women' element={<Women/>}/>
-            {/* <Route path='/kids' element={<Kids/>}/>
-            <Route path='/genz' element={<Genz/>}/> */}
+            <Route path='/kids' element={<Kids/>}/>
+            <Route path='/genz' element={<Genz/>}/>
           </Routes>
         </div>
       </div>
